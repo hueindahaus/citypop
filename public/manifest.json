@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Citypop",
+  "name": "Citypop - Population of cities around the globe",
   "icons": [],
   "start_url": ".",
   "display": "standalone",

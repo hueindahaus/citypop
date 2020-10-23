@@ -17,3 +17,8 @@ code {
   width: 0px;  /* Remove scrollbar space */
   background: transparent;  /* Optional: just make scrollbar invisible */
 }
+
+
+html {
+  scroll-behavior: smooth;
+}

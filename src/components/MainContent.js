@@ -4,9 +4,9 @@ import "../css/main-content.css"
 
 function MainContent(){
   return(
-    <div className="main-container">
+    <main id="main" className="main-container">
 
-    </div>
+    </main>
   )
 }
 

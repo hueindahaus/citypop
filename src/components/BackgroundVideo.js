@@ -1,6 +1,6 @@
 import React from "react"
-import videoSource from "./resources/videos/city-view.mp4"
-import "./css/header.css"
+import videoSource from "../resources/videos/city-view.mp4"
+import "../css/header.css"
 
 function BackgroundVideo(){
   

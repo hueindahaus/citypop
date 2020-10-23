@@ -1,8 +1,11 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
 .header-container{
   position: relative;
   width: 100%;
-  height: 60rem;
-  max-height: 60rem;
+  height: 100vh;
+  max-height: 100vh;
 }
 
 .header-container::before{
@@ -13,19 +16,22 @@
   width: 100%;
   height: 20rem;
   background: #fff;
-  clip-path: polygon(100% 0,-1% 100%, 100% 100%);
+  clip-path: polygon(100% 0, 0 100%, 100% 100%);
   z-index: 0;
 }
 
 .head-line{
   position: absolute;
   color: white;
-  font-family: "Roboto", sans-serif;
-  font-weight: 200;
+  font-family:  'Bangers', cursive;
+  font-weight: 100;
   font-size: 6rem;
   width: 100%;
-  margin-top: 20rem;
+  bottom: 30rem;
   text-align: center;
+  /*below is style that will be modified by the GSAP library*/
+  opacity: 0;
+  transform: translateY(20);
 }
 
 .sub-line{
@@ -34,14 +40,17 @@
   font-size: 1.2rem;
   width: 100%;
   font-weight: 200;
-  margin-top: 28rem;
+  bottom: 30rem;
   text-align: center;
+  /*below is style that will be modified by the GSAP library*/
+  opacity:0;
+  transform: translateY(20);
 }
 
 
 .video{
   width: 100%;
-  height: 60rem;
+  height: 100vh;
   max-height: 60rem;
   object-fit: cover;
   position: fixed;
@@ -56,7 +65,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 60rem;
+  height: 100vh;
   background: linear-gradient(45deg, #8614ce, #ff0057);
   opacity: 0.4;
   z-index: -1;
@@ -67,7 +76,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 31rem;
+  bottom: 27rem;
   left: 50%;
   transform: translateX(-50%)
 }
@@ -75,6 +84,9 @@
 .social-media{
   width: 2rem;
   margin:0 1rem; 
+  /*below is style that will be modified by the GSAP library*/
+  opacity: 0;
+  transform: translateY(20);
 }
 
 .social-media:hover{
@@ -100,6 +112,7 @@
   font-size: 1.2rem;
   cursor: pointer;
   outline:none;
+  opacity: 0;
 }
 
 .get-started-button:hover{

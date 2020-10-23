@@ -5,7 +5,7 @@ import "../css/header.css"
 function BackgroundVideo(){
   
   return(
-    <div className="container">
+    <div >
       <video autoPlay="autoPlay" loop="loop" muted className="video">
         <source src={videoSource} type="video/mp4"/>
         your browser does not support the video tag.

@@ -1,15 +1,19 @@
 import React, {Component} from "react"
 import "../../css/search.css"
+
+// import for enter-animations
 import {TweenMax, Power3} from "gsap"
 
 
-
+// class based component that handles everything that has to do with country-searching
 class CountrySearch extends Component{
 
   constructor(){
     super()
     this.searchBar = null
   }
+
+  //lifecycle method that will be called when the component succesfully mounts
   componentDidMount(){
     TweenMax.to(this.searchBar, 1.2,{opacity:1,y: -20,ease: Power3.easeOut})
   }

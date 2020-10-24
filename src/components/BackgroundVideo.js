@@ -4,6 +4,7 @@ import "../css/header.css"
 
 
 //functional component that returns a <video> element
+// video is taken from https://mixkit.co/free-stock-video/daytime-city-traffic-aerial-view-56/ and complies with the license
 function BackgroundVideo(){
   return(
     <div className="video-container">

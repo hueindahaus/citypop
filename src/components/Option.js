@@ -1,8 +1,10 @@
 import React from "react"
+
+//import for react router to be able to navigate between components
 import {NavLink} from "react-router-dom"
 
 
-
+// functional component which only handles the option of city-searching and country-searching
 function Option(){
   return(
     <div className="column">

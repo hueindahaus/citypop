@@ -8,10 +8,39 @@
 }
 
 .option-button{
+  color: black;
+  width: 14rem;
+  height: 2rem;
+  font-size: 1.2rem;
+  border-width: 1.5px;
+  border-radius: 0.4rem;
+  border-style: solid;
+  border-color: transparent;
+  cursor: pointer;
+  outline:none;
+  /*styling that is below are only set because the animation will set the normal value*/
+  margin-right:100vw;
+  margin-left:100vw;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  outline: none;
+}
+
+.option-button:hover{
+  
+  border-radius: 0.4rem;
+  border-style: solid;
+  border-color: #e62e6b;
+}
+
+
+
+.option-button-active{
   color: white;
   background: linear-gradient(45deg, #e62e6b, #ff0057);
   width: 14rem;
-  height: 4rem;
+  height: 2rem;
   font-size: 1.2rem;
   border-radius: 0.4rem;
   border-style: solid;
@@ -21,9 +50,12 @@
   /*styling that is below are only set because the animation will set the normal value*/
   margin-right:100vw;
   margin-left:100vw;
+  text-decoration: none;
+  text-align: center;
+  display: block;
 }
 
-.option-button:hover{
+.option-button-active:hover{
   background:  #ff0057;
 }
 
@@ -41,5 +73,6 @@
 }
 
 .option-text{
-  margin-top: 20rem;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
 }

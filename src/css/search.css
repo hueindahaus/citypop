@@ -1,0 +1,59 @@
+.column{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+
+
+/* below is found code to style neumorphic input fields https://codemyui.com/neumorphic-inspired-search-bar/*/
+
+.finder {
+  margin-top: 4rem;
+  border: 1px solid #fff;
+  background-color: #f6f5f0;
+  border-radius: 15px;
+  padding: 8px;
+  box-shadow: 9px 9px 16px rgba(189, 189, 189, 0.6),
+    -9px -9px 16px rgba(255, 255, 255, 0.5);
+  height: 5rem;
+
+  /* styling below will be altered by animation*/
+  opacity: 0;
+  
+}
+
+.finder__outer {
+  display: flex;
+  width: 30rem;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  box-shadow: inset 10px 10px 15px -10px #c3c3c3,
+    inset -10px -10px 15px -10px #ffffff;
+}
+
+.finder__inner {
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex: 1;
+}
+
+
+.finder__input {
+  height: calc(100% + 3rem);
+  border: none;
+  background-color: transparent;
+  outline: none;
+  font-size: 1.5rem;
+  letter-spacing: 0.75px;
+  width: 100%
+}

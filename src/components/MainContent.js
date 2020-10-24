@@ -1,8 +1,15 @@
 import React, {Component, useEffect} from "react"
 import "../css/main-content.css"
+import Option from "./Option.js"
+import CitySearch from "./Pages/CitySearch.js"
+import CountrySearch from "./Pages/CountrySearch";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+import {Route, BrowserRouter as Router, Switch} from "react-router-dom"
+
+
 
 // register ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
@@ -14,8 +21,11 @@ class MainContent extends Component{
   constructor(){
     super()
     this.state = {
-      
+      page:"start"
     }
+
+    this.handleCityButton = this.handleCityButton.bind(this)
+    this.handleCountryButton = this.handleCountryButton.bind(this)
   }
 
   componentDidMount(){
@@ -42,18 +52,33 @@ class MainContent extends Component{
     });
   }
 
+  handleCityButton(event){
+    this.setState({
+      page:"left"
+    })
+    console.log(this.state)
+  }
+
+  handleCountryButton(event){
+    this.setState({
+      page:"right"
+    })
+    console.log(this.state)
+  }
+
   render(){
-  
+    
+
     return(
       <main id="main" className="main-container">
-        <div className="column">
-          <h2 className="option-text">Choose your option!</h2>
-          <div className="row">
-            <button className="option-button">Search by city</button>
-            <button className="option-button">Search by country</button>
-          </div>
-        </div>
-        
+
+        <Router>
+          <Option handleCityButton={this.handleCityButton} handleCountryButton={this.handleCountryButton} />
+          <Switch>
+            <Route path="/city" component={CitySearch} />
+            <Route path="/country" component={CountrySearch} />
+          </Switch>
+        </Router>
       </main>
     )
   }

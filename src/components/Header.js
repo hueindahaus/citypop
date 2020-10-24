@@ -37,9 +37,9 @@ function Header(props){
       <h1 ref={element => {headline=element}} className="head-line">CityPop</h1>
       <h2 ref={element => {subline=element}} className="sub-line">Population of cities all around the globe.</h2>
       <div className="link-box">
-        <a href="#"><img ref={element => {facebook=element}} className="social-media" src={facebookIcon}/></a>
-        <a href="#"><img ref={element => {instagram=element}} className="social-media" src={instagramIcon}/></a>
-        <a href="#"><img ref={element => {twitter=element}} className="social-media" src={twitterIcon}/></a>
+        <a href="https://facebook.com/"><img ref={element => {facebook=element}} className="social-media" src={facebookIcon} alt="facebook logo"/></a>
+        <a href="https://instagram.com/"><img ref={element => {instagram=element}} className="social-media" src={instagramIcon} alt="instagram logo"/></a>
+        <a href="https://twitter.com/"><img ref={element => {twitter=element}} className="social-media" src={twitterIcon} alt="twitter logo"/></a>
       </div>
       <button ref={element => {button=element}} className="get-started-button" onClick={scrollToMainSection}>Get started</button>
       <BackgroundVideo />

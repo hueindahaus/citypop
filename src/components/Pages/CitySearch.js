@@ -1,8 +1,11 @@
-import React, {Component, useRef, useEffect} from "react"
+import React, {Component} from "react"
 import "../../css/search.css"
+import {searchCity} from "../../service/DataHandler.js"
 
 // import for enter-animations
 import {TweenMax, Power3} from "gsap"
+
+
 
 // class based component that handles everything that has to do with city-searching
 class CitySearch extends Component{
@@ -10,24 +13,69 @@ class CitySearch extends Component{
   constructor(){
     super()
     this.searchBar = null
+
+    this.state = {
+      result: "",
+      loading: false
+    }
+
+    this.handleSearch = this.handleSearch.bind(this)
   }
+
 
   // lifecycle method that is called when the component succesfully mounts
   componentDidMount(){
     TweenMax.to(this.searchBar, 1.2,{opacity:1,y: -20,ease: Power3.easeOut})
   }
 
+  // method that queries a result from DataHandler.js, also handles when it is loading data
+  async handleSearch(event){
+    this.setState({
+      loading: true
+    })
+    if(event.target.value.length > 0){
+      this.setState({
+        result: await searchCity(event.target.value),
+        loading: false
+      })
+
+      console.log(this.state.result)
+    } else {
+      this.setState({
+        result: "",
+        loading: false
+      })
+    }
+    
+  }
+
   render(){
+
+    let resultDisplay = ""
+    let result = this.state.result
+    if(result.hasOwnProperty("error")){
+      resultDisplay = <h2>{result.error}</h2>
+    } else if (result.hasOwnProperty("name")){
+    resultDisplay = <h2>{result.name + " has a population of:  " + result.population}</h2>
+    } else {
+      resultDisplay = <h2> </h2>
+    }
+
+    let loadingIndicator = <h2>loading...</h2>
+
     return(
       <div className="column">
-        <div ref={element => {this.searchBar = element}} class="finder">
-            <div class="finder__outer">
-              <div class="finder__inner">
-                <div class="finder__icon" ref="icon"></div>
-                <input class="finder__input" type="text" name="q" placeholder="e.g. Stockholm" />
-              </div>
-            </div>
+        <div ref={element => {this.searchBar = element}} className="finder">
+          <div className="finder__outer">
+            <div className="finder__inner">
+              <div className="finder__icon" ref="icon"></div>
+              <input onChange={this.handleSearch} className="finder__input" type="text" name="q" placeholder="e.g. Stockholm" />
+            </div>        
           </div>
+        </div>
+        <div>
+          {!this.state.loading ? resultDisplay : loadingIndicator}
+        </div>
       </div>
     )
   }

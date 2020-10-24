@@ -21,11 +21,11 @@ class CountrySearch extends Component{
   render(){
     return(
       <div className="column">
-        <div ref={element=> {this.searchBar=element}} class="finder">
-            <div class="finder__outer">
-              <div class="finder__inner">
-                <div class="finder__icon" ref="icon"></div>
-                <input class="finder__input" type="text" name="q" placeholder="e.g. Sweden" />
+        <div ref={element=> {this.searchBar=element}} className="finder">
+            <div className="finder__outer">
+              <div className="finder__inner">
+                <div className="finder__icon" ref="icon"></div>
+                <input className="finder__input" type="text" name="q" placeholder="e.g. Sweden" />
               </div>
             </div>
           </div>

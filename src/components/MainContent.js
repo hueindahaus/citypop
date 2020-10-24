@@ -1,4 +1,4 @@
-import React, {Component, useEffect} from "react"
+import React, {Component} from "react"
 import "../css/main-content.css"
 import Option from "./Option.js"
 import CitySearch from "./Pages/CitySearch.js"
@@ -18,10 +18,6 @@ gsap.registerPlugin(ScrollTrigger);
 // class component that includes everything that the page is meant to do. This component could in fact be a functional component, but since I want the code open for extensions
 // it is more convenient to keep it as a class based component.
 class MainContent extends Component{
-
-  constructor(){
-    super()
-  }
 
   // lifecycle method that will be called when the component succesfully mounts
   componentDidMount(){

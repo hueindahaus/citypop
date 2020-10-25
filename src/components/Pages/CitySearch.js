@@ -54,9 +54,9 @@ class CitySearch extends Component{
     let resultDisplay = ""
     let result = this.state.result
     if(result.hasOwnProperty("error")){
-      resultDisplay = <h2>{result.error}</h2>
-    } else if (result.hasOwnProperty("name")){
-    resultDisplay = <h2>{result.name + " has a population of:  " + result.population}</h2>
+      resultDisplay = <h2 style={{color: "#e66b2e"}}>{result.error}</h2>
+    } else if (result.hasOwnProperty("toponymName") && result.hasOwnProperty("population")){
+    resultDisplay = <h2 style={{color:"#e62e6b"}}>{result.toponymName + " has a population of:  " + result.population}</h2>
     } else {
       resultDisplay = <h2> </h2>
     }
@@ -69,7 +69,7 @@ class CitySearch extends Component{
           <div className="finder__outer">
             <div className="finder__inner">
               <div className="finder__icon" ref="icon"></div>
-              <input onChange={this.handleSearch} className="finder__input" type="text" name="q" placeholder="e.g. Stockholm" />
+              <input onChange={this.handleSearch} className="finder__input" type="text" name="q" placeholder="e.g. Gothenburg" />
             </div>        
           </div>
         </div>

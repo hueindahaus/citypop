@@ -1,68 +1,32 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![CityPop](docs/images/citypop.png)
 
-## Available Scripts
 
-In the project directory, you can run:
+## `Background`
+Citypop is a web-application that enables searching for population by city or the most populated cities in a country. It was built with [ReactJS](https://reactjs.org/) and initiated with [Create React App](https://github.com/facebook/create-react-app). [NodeJS](https://nodejs.org/en/) was heavily used with it's package manager to install libraries as [GreenSock](https://greensock.com/react/) and [React Router](https://reactrouter.com/).
 
-### `npm start`
+## `Architecture`
+The structure of the code is heavily influenced by the standards of ReactJS. The application is based on components. The components are then divided into two groups, functional and class based. The functional components are simple components that doesn't rely on states, while the opposite for class based components. The application has a heavy front-end but also includes back-end processing in the form of a data-handler. The data-handler's purpose is to query data, parse, process it, and then provide it in the wanted format.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## `Open development environment`
+Make sure latest version of NodeJS, npm and npx is installed with the commands:
+```bash
+node -v
+npm -v
+npx -v
+```
+Navigate to the top-directory of the project:
+```bash
+cd <path>/citypop
+```
+Start a local server with the command:
+```bash
+npm start
+```
+It should open a window in your browser with the running application.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+If you use visual studio code as integrated development environment, you can open a new command-prompt, navigate to the top-directory and write:
+```bash
+code .
+```
+It will open visual studio in the right directory. If you use another ide, please open the folder citypop to open the project.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

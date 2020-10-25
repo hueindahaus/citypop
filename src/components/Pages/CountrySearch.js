@@ -58,7 +58,7 @@ class CountrySearch extends Component{
         return <CityTile cityName={city.toponymName} population={city.population} key={city.geonameId}/>
       })
 
-      resultDisplay = <div>
+      resultDisplay = <div style={{marginBottom:"2rem"}}>
         {resultHeadline}
         {resultList}
       </div>

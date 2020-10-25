@@ -4,21 +4,21 @@
 .header-container{
   position: relative;
   width: 100%;
-  height: 100vh;
-  max-height: 100vh;
+  height: 60rem;
 }
 
 .header-container::before{
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   left: 0;
   width: 100%;
-  height: 20rem;
+  height: 10rem;
   background: #fff;
   clip-path: polygon(100% 0, 0 100%, 100% 100%);
   z-index: 0;
 }
+
 
 .head-line{
   position: absolute;
@@ -27,7 +27,7 @@
   font-weight: 100;
   font-size: 6rem;
   width: 100%;
-  bottom: 30rem;
+  top: 12rem;
   text-align: center;
   /*below is style that will be modified by the GSAP library*/
   opacity: 0;
@@ -40,7 +40,7 @@
   font-size: 1.2rem;
   width: 100%;
   font-weight: 200;
-  bottom: 30rem;
+  top: 21rem;
   text-align: center;
   /*below is style that will be modified by the GSAP library*/
   opacity:0;
@@ -50,12 +50,12 @@
 
 .video{
   width: 100%;
-  height: 100vh;
+  height: 60rem;
   object-fit: cover;
   position: fixed;
   top:0;
   z-index: -999;
-
+  
 }
 
 .video-container::before{
@@ -64,7 +64,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 60rem;
   background: linear-gradient(45deg, #8614ce, #ff0057);
   opacity: 0.4;
   z-index: -1;
@@ -75,7 +75,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  bottom: 27rem;
+  top: 26rem;
   left: 50%;
   transform: translateX(-50%)
 }
@@ -97,7 +97,7 @@
 
 .get-started-button{
   position: absolute;
-  bottom: 20rem;
+  top: 32rem;
   background-color:transparent;
   width: 14rem;
   height: 4rem;

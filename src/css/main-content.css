@@ -3,7 +3,7 @@
 .main-container{
   position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-color: white;
 }
 
@@ -28,7 +28,6 @@
 }
 
 .option-button:hover{
-  
   border-radius: 0.4rem;
   border-style: solid;
   border-color: #e62e6b;
@@ -39,7 +38,6 @@
 .option-button-active{
   color: white;
   background: linear-gradient(45deg, #e62e6b, #ff0057);
-  width: 14rem;
   height: 2rem;
   font-size: 1.2rem;
   border-radius: 0.4rem;
@@ -70,6 +68,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  width: 100%;
 }
 
 .option-text{

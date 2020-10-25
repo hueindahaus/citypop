@@ -3,16 +3,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 
 .row{
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
-
-
-
 
 .city-tile{
   border-radius: 4px;
@@ -34,9 +33,7 @@
   opacity: 0;
 }
 
-
 /* below is code to style neumorphic input fields, taken from: https://codemyui.com/neumorphic-inspired-search-bar/*/
-
 .finder {
   margin-top: 4rem;
   border: 1px solid #fff;
@@ -49,12 +46,11 @@
 
   /* styling below will be altered by animation*/
   opacity: 0;
-  
 }
 
 .finder__outer {
   display: flex;
-  width: 30rem;
+  width: 30vw;
   padding: 1.5rem 2rem;
   border-radius: 10px;
   box-shadow: inset 10px 10px 15px -10px #c3c3c3,

@@ -1,6 +1,7 @@
 import React, {Component} from "react"
 import "../../css/search.css"
 import {searchCountry} from "../../service/DataHandler.js"
+import CityTile from "../CityTile.js"
 
 // import for enter-animations
 import {TweenMax, Power3} from "gsap"
@@ -35,7 +36,7 @@ class CountrySearch extends Component{
         loading: false
       })
 
-      console.log(this.state.result)
+      //console.log(this.state.result)
     } else {
       this.setState({
         result: "",
@@ -51,7 +52,16 @@ class CountrySearch extends Component{
     if(result.hasOwnProperty("error")){
       resultDisplay = <h2 style={{color: "#e66b2e"}}>{result.error}</h2>
     } else if (result.hasOwnProperty("cities")){
-      resultDisplay = <h2 style={{color:"#e62e6b"}}>{result.cities[0].countryName +"'s top populated cities are:"}</h2>
+      let resultHeadline = <h2 style={{color:"#e62e6b"}}>{result.cities[0].countryName +"'s top populated cities are:"}</h2>
+      
+      let resultList = result.cities.map((city) => {
+        return <CityTile cityName={city.toponymName} population={city.population} key={city.geonameId}/>
+      })
+
+      resultDisplay = <div>
+        {resultHeadline}
+        {resultList}
+      </div>
     } else {
       resultDisplay = <h2> </h2>
     }

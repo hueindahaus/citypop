@@ -30,6 +30,7 @@ export async function searchCity(input){
       //console.log(data.geonames)
       for(let i=0; i <data.geonames.length; i++){
         if(data.geonames[i].fcl === "P"){
+          //return the first object that is classfied as a "populated place" (Note that the list is already sorted by population)
           return data.geonames[i]
         }
       }

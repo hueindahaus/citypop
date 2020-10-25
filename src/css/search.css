@@ -14,7 +14,28 @@
 
 
 
-/* below is found code to style neumorphic input fields https://codemyui.com/neumorphic-inspired-search-bar/*/
+.city-tile{
+  border-radius: 4px;
+  background-color:white;
+  
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  cursor: pointer;
+  height: 2rem;
+}
+
+.city-tile:hover{
+  box-shadow: 0 7px 14px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.city-tile-title{
+  font-size: 1.2rem;
+  text-align: center;
+  /* values below will be altered by animation*/
+  opacity: 0;
+}
+
+
+/* below is code to style neumorphic input fields, taken from: https://codemyui.com/neumorphic-inspired-search-bar/*/
 
 .finder {
   margin-top: 4rem;

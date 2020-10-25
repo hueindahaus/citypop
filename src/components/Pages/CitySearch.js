@@ -39,7 +39,6 @@ class CitySearch extends Component{
         loading: false
       })
 
-      console.log(this.state.result)
     } else {
       this.setState({
         result: "",

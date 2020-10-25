@@ -10,7 +10,6 @@ export async function searchCity(input){
 
   // eslint-disable-next-line
   if(!input.match("^([a-zA-Z\u0080-\u024F]{1}[a-zA-Z\u0080-\u024F\. |\-| |']*[a-zA-Z\u0080-\u024F\.']{1})$")){
-    //console.log("not valid characters")
     return {error:"Oops, invalid city name!"}
   }
   
@@ -27,7 +26,6 @@ export async function searchCity(input){
     let data = await response.json()
     
     if(data.hasOwnProperty("geonames") && data.geonames.length > 0){
-      //console.log(data.geonames)
       for(let i=0; i <data.geonames.length; i++){
         if(data.geonames[i].fcl === "P"){
           //return the first object that is classfied as a "populated place" (Note that the list is already sorted by population)
@@ -78,7 +76,6 @@ async function getCitiesByCountryCode(countryCode){
 
   // eslint-disable-next-line
   if(!countryCode.match("^([a-zA-Z\u0080-\u024F]{1}[a-zA-Z\u0080-\u024F\. |\-| |']*[a-zA-Z\u0080-\u024F\.']{1})$")){
-    //console.log("not valid characters")
     return {error:"Oops, invalid country name!"}
   }
 
@@ -95,7 +92,6 @@ async function getCitiesByCountryCode(countryCode){
     let data = await response.json()
     
     if(data.hasOwnProperty("geonames") && data.geonames.length > 0){
-      //console.log(data.geonames)
       
       if(data.geonames.length > 5){
         return {cities: [data.geonames[0], data.geonames[1], data.geonames[2], data.geonames[3], data.geonames[4]]}

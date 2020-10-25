@@ -1,7 +1,7 @@
 ![CityPop](docs/images/citypop.png)
 
 
-## `Backgroound`
+## `Background`
 Citypop is a web-application that enables searching for population by city or the most populated cities in a country. It was built with [ReactJS](https://reactjs.org/) and initiated with [Create React App](https://github.com/facebook/create-react-app). [NodeJS](https://nodejs.org/en/) was heavily used with it's package manager to install libraries as [GreenSock](https://greensock.com/react/) and [React Router](https://reactrouter.com/).
 
 ## `Architecture`

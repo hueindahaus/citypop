@@ -3,8 +3,11 @@ import {getCode, getName} from "country-list"
 
 // http://download.geonames.org/export/dump/readme.txt : a readme about geonames database
 
-
-
+// settings-object that holds general "settings for the api"
+const settings = {
+  username: "weknowit",
+  base_url: "http://api.geonames.org/searchJSON?"
+}
 
 // function that returns a city object (or error object) depending on the search. It will take the one that matches the input string best and then taking the one that has highest population
 export async function searchCity(input){
@@ -16,11 +19,8 @@ export async function searchCity(input){
     return {error:"Oops, invalid city name!"}
   }
   
-  // some api argument
-  const username = "weknowit"
-
   // documentation of api can be found here: http://www.geonames.org/export/geonames-search.html
-  let url = "http://api.geonames.org/searchJSON?name_equals=" + input + "&maxRows=10&cities=cities15000&orderby=population&username=" + username
+  let url = settings.base_url + "name_equals=" + input + "&maxRows=10&cities=cities15000&orderby=population&username=" + settings.username
 
   let response = await fetch(url)
 
@@ -82,10 +82,7 @@ async function getCitiesByCountryCode(countryCode){
     return {error:"Oops, invalid country name!"}
   }
 
-  // some api argument
-  const username = "weknowit"
-
-  let url = "http://api.geonames.org/searchJSON?q=" + countryCode + "&country=" + countryCode +"&maxRows=10&orderby=population&cities=cities15000&username=" + username
+  let url = settings.base_url + "q=" + countryCode + "&country=" + countryCode +"&maxRows=10&orderby=population&cities=cities15000&username=" + settings.username
 
 
   let response = await fetch(url)

@@ -1,46 +1,30 @@
-import React, {Component} from "react"
+import React, {useState, useEffect, useRef} from "react"
 import "../css/search.css"
 
 // import for animations
 import {TweenMax, Power3} from "gsap"
 
+function CityTile(props){
+  let textRef = useRef(null)
 
-class CityTile extends Component{
-  constructor(){
-    super()
-    this.state = {
-      active: false
-    }
+  let [active, setActive] = useState(false)
 
-    this.textRef = null
-    this.handleClick = this.handleClick.bind(this)
+  useEffect(()=>{
+    TweenMax.to(textRef, 1.2,{opacity:1,ease: Power3.easeOut})
+  })
+
+  function handleClick(){
+    setActive(prevActive => {
+      return !prevActive
+    })
   }
 
-  componentDidMount(){
-    TweenMax.to(this.textRef, 1.2,{opacity:1,ease: Power3.easeOut})
-  }
-
-  handleClick(){
-    this.setState(prevState =>({
-      active:!prevState.active
-    }))
-  }
-
-  render(){
-    let display;
-
-    if(this.state.active){
-      display = <p ref={element=> {this.textRef=element}} className="city-tile-title">{this.props.cityName} has a population of {this.props.population}</p>
-    } else {
-      display = <p ref={element=> {this.textRef=element}} className="city-tile-title">{this.props.cityName}</p>
-    }
-
-    return(
-      <div onClick={this.handleClick} className="city-tile">
-        {display}
-      </div>
-    )
-  }
+  return(
+    <div onClick={handleClick} className="city-tile">
+      {active ? <p ref={element=> {textRef=element}} className="city-tile-title">{props.cityName} has a population of {props.population}</p> :
+      <p ref={element=> {textRef=element}} className="city-tile-title">{props.cityName}</p>}
+    </div>
+  )
 }
 
 export default CityTile

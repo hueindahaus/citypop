@@ -6,8 +6,6 @@ import {TweenMax, Power3} from "gsap"
 
 
 class CityTile extends Component{
-
-
   constructor(){
     super()
     this.state = {

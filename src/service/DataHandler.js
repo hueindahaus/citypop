@@ -1,6 +1,9 @@
+
 import {getCode, getName} from "country-list"
 
 // http://download.geonames.org/export/dump/readme.txt : a readme about geonames database
+
+
 
 
 // function that returns a city object (or error object) depending on the search. It will take the one that matches the input string best and then taking the one that has highest population
@@ -95,7 +98,7 @@ async function getCitiesByCountryCode(countryCode){
       
       if(data.geonames.length > 5){
         return {cities: [data.geonames[0], data.geonames[1], data.geonames[2], data.geonames[3], data.geonames[4]]}
-      }  else return {cities: data.geonames};
+      }  else return {cities: data.geonames}
       
 
     } else if (data.hasOwnProperty("geonames") && data.geonames.length === 0){
@@ -109,4 +112,3 @@ async function getCitiesByCountryCode(countryCode){
   }
   
 }
-

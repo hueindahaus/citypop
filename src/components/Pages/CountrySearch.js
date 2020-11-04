@@ -1,6 +1,7 @@
 import React, {Component} from "react"
 import "../../css/search.css"
 import {searchCountry} from "../../service/DataHandler.js"
+import {debounce} from "../../service/Debounce.js"
 import CityTile from "../CityTile.js"
 
 // import for enter-animations
@@ -71,7 +72,7 @@ class CountrySearch extends Component{
             <div className="finder__outer">
               <div className="finder__inner">
                 <div className="finder__icon" ref="icon"></div>
-                <input onChange={this.handleSearch} className="finder__input" type="text" name="q" placeholder="e.g. Sweden" />
+                <input onChange={debounce(this.handleSearch,500)} className="finder__input" type="text" name="q" placeholder="e.g. Sweden" />
               </div>
             </div>
           </div>

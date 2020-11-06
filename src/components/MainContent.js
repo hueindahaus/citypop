@@ -14,8 +14,6 @@ import {Route, BrowserRouter as Router, Switch} from "react-router-dom"
 // register ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
-
-
 // functional component that regulates the container for all of the main conent
 function MainContent(){
 

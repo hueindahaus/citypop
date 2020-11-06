@@ -34,6 +34,7 @@ function CitySearch(){
     }
   }
 
+  //section for handling how the result should be displayed
   let resultDisplay = ""
   if(result !== undefined){
     if(result.hasOwnProperty("error")){
